@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include<string.h>
+
+
+
+int sort(char *str)
+{
+    int len;char temp;
+    len=strlen(str);
+        for(int a=0;a<len-1;a++)
+        {
+            for(int b=0;b<len-a-1;b++)
+            {
+                if(str[b]>str[b+1])
+                {
+                    temp=str[b];
+                    str[b]=str[b+1];
+                    str[b+1]=temp;
+                }
+            }
+        }
+}
+int main()
+{
+    char str1[20],str2[20];int r;
+    printf("string1:");
+    scanf("%s",str1);
+    sort(str1);
+    printf("\nstring2:");
+    scanf("%s",str2);
+    sort(str2);
+    r=strcmp(str1,str2);
+    if(r==0)
+    printf("anagram");
+    else
+    printf("not anagram");
+    
+}   
+    
