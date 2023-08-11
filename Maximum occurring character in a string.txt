@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[100],maxchar;
+    int max=0,freq=0,i,j;
+    printf("Enter a statement:");
+    gets(str);
+    int len=strlen(str);
+    for(i=0;i<len;i++)
+    {
+        freq=0;
+        for(j=0;j<len;j++ )
+        {
+            if(str[i]==str[j])
+            {
+                freq++;
+            }
+        }
+        if(freq>max)
+        {
+            max=freq;
+            maxchar=str[i];
+        }
+    }
+    printf("%c is occurring %d times",maxchar,max);
+}
